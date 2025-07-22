@@ -63,7 +63,6 @@ app.get('/api/check-uploads', (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
-
 // ✅ Simple test route
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from backend!' });
