@@ -9,7 +9,13 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+<<<<<<< HEAD
   
+=======
+   build: {
+    chunkSizeWarningLimit: 1500, // set to a higher value (in KB)
+  },
+>>>>>>> 4dda0fbea102d0e584d6f514cd4ec826f75cbc2c
   plugins: [
     react(),
     mode === 'development' &&
