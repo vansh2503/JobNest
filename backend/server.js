@@ -64,6 +64,9 @@ app.get('/api/hello', (req, res) => {
 
 // ✅ MongoDB connection
 const PORT = process.env.PORT || 5000;
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server started on port ${port}`);
+});
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
