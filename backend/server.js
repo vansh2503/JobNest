@@ -23,7 +23,14 @@ import recommendationRoutes from "./routes/recommendations.js";
 
 const app = express();
 
-app.use(cors());
+// ✅ CORS configuration for deployment
+app.use(cors({
+  origin: [
+    "https://your-frontend-url.com", // <-- Replace with your deployed frontend URL
+    "http://localhost:5173", // for local dev
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 // ✅ API routes
@@ -62,14 +69,15 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from backend!' });
 });
 
-// ✅ MongoDB connection
-const PORT = process.env.PORT || 5000;
+// ✅ MongoDB connection and server start
+const PORT = process.env.PORT || 4000;
+const HOST = "0.0.0.0";
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('✅ Connected to MongoDB Atlas');
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running at http://localhost:${PORT}`);
+    app.listen(PORT, HOST, () => {
+      console.log(`🚀 Server running at http://${HOST}:${PORT}`);
     });
   })
   .catch((err) => console.error('❌ MongoDB connection error:', err));

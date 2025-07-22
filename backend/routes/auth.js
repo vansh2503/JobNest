@@ -26,8 +26,10 @@ if (!fs.existsSync(uploadsDir)) {
 // Multer storage config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    console.log('Upload destination path:', uploadsDir);
-    cb(null, uploadsDir);
+    // Use /tmp for serverless, uploadsDir for local/dev
+    const dest = process.env.NODE_ENV === 'production' ? '/tmp' : uploadsDir;
+    console.log('Upload destination path:', dest);
+    cb(null, dest);
   },
   filename: function (req, file, cb) {
     const ext = path.extname(file.originalname);
