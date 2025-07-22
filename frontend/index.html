@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>JobNest</title>
+    <meta name="description" content="JobNest - Find jobs or hire top talent easily." />
+    <meta name="author" content="JobNest Team" />
+
+    <!-- No Favicon-->
+    <link rel="icon" href="data:,">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="JobNest" />
+    <meta property="og:description" content="Find your dream job or hire the best candidates with JobNest." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/jobnest-og.png" />
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jobnest" />
+    <meta name="twitter:image" content="/jobnest-og.png" />
+
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- Botpress Webchat Config (Static Script) -->
+    <script>
+      window.addEventListener("load", function () {
+        const script = document.createElement("script");
+        script.src = "https://files.bpcontent.cloud/2025/07/02/12/20250702125256-PYN2GO6C.js";
+        document.body.appendChild(script);
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+  
