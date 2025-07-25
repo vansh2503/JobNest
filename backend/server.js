@@ -24,7 +24,12 @@ import recommendationRoutes from "./routes/recommendations.js";
 const app = express();
 
 // ✅ CORS configuration for deployment
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173"
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 // ✅ API routes
