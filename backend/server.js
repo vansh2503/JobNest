@@ -26,8 +26,7 @@ const app = express();
 // ✅ CORS configuration for deployment
 app.use(cors({
   origin: [
-    "https://your-frontend-url.com", // <-- Replace with your deployed frontend URL
-    "http://localhost:5173", // for local dev
+    "https://jobnest-frontend-kmcn.onrender.com"
   ],
   credentials: true,
 }));
