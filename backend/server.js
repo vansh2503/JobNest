@@ -24,12 +24,7 @@ import recommendationRoutes from "./routes/recommendations.js";
 const app = express();
 
 // ✅ CORS configuration for deployment
-app.use(cors({
-  origin: [
-    "https://jobnest-frontend-kmcn.onrender.com"
-  ],
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 
 // ✅ API routes
