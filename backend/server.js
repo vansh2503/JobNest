@@ -26,7 +26,7 @@ const app = express();
 // ✅ CORS configuration for deployment
 app.use(cors({
   origin: [
-    "http://localhost:5173"
+    "https://jobnest-frontend-mrvx.onrender.com"
   ],
   credentials: true,
 }));
