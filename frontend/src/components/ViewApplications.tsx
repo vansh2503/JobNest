@@ -14,6 +14,8 @@ interface Application {
 
 const recruiterId = '68658966fb651892759c91b1'; // ✅ Replace with dynamic ID in production
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const ViewApplication: React.FC = () => {
   const [applications, setApplications] = useState<Application[]>([]);
   const [selectedTitle, setSelectedTitle] = useState<string>('all');
@@ -22,7 +24,7 @@ const ViewApplication: React.FC = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/applications?postedBy=${recruiterId}`);
+        const res = await fetch(`${apiUrl}/api/applications?postedBy=${recruiterId}`);
         const data = await res.json();
         setApplications(data);
       } catch (error) {
