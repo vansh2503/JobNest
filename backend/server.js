@@ -26,7 +26,7 @@ const app = express();
 // ✅ CORS configuration for deployment
 app.use(cors({
   origin: [
-    "https://job-nest-frontend-nine.vercel.app/"
+    "https://job-nest-frontend-nine.vercel.app"
   ],
   credentials: true,
 }));
